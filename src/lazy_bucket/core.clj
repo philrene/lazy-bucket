@@ -47,12 +47,6 @@
 
 (defn pull-request
   [config repo-path title description]
-  ;; owner from gitrepo url
-  ;; repo from gitrepo url
-  ;; source-branch current branch from repo
-  ;; destinbiation branch, by default integration
-  ;; reviewers from reviewers on top here
-
   (create-pr :basic-auth (basic-auth config)
              :owner (git-owner repo-path)
              :repo (git-repo repo-path)
@@ -60,20 +54,3 @@
              :title title
              :description description
              :reviewers (reviewers repo-path config)))
-
-
-(comment
-
-  (reviewers "/Users/prene/src/terminus" (read-file global-config))
-
-
-  (create-pr :owner "prene"
-             :repo "git-playground"
-             :basic-auth ["prene" "bluewave12"]
-             :title "Yeah buddy"
-             :description "nicest description in town"
-             :source-branch "f/branch"
-             :reviewers ["peyot"])
-
-
-  )
