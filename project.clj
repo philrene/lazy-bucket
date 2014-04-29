@@ -10,5 +10,4 @@
                  [environ "0.5.0"]
                  [im.chit/ribol "0.4.0"]
                  [com.taoensso/timbre "3.1.6"]]
-  :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.4"]]
-                   :source-paths ["dev"]}})
+  :eval-in-leiningen true)
