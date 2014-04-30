@@ -47,14 +47,18 @@
                                                         (:excluded us-from-local-config)]))))))
 
 (defn pull-request
-  [config repo-path title description]
+  [config repo-path title description & {:keys [included excluded]
+                                         :or {included #{}
+                                              excluded #{}}}]
   (let [ret (create-pr :basic-auth (basic-auth config)
                        :owner (git-owner repo-path)
                        :repo (git-repo repo-path)
                        :source-branch (git-current-branch repo-path)
                        :title title
                        :description description
-                       :reviewers (reviewers repo-path config))]
+                       :reviewers (-> (reviewers repo-path config)
+                                      (clojure.set/difference excluded)
+                                      (clojure.set/union included)))]
     (-> ret
         :body
         cheshire.core/parse-string
