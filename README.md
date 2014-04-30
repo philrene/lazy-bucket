@@ -1,6 +1,6 @@
 # lazy-bucket
 
-Create a pull request for any project.
+Create a pull request for any project hosted on bitbucket
 
 It looks in the current project and open a pull request
 against integration for the current branch.
@@ -26,6 +26,11 @@ of you ~/.lein/profiles.clj
 
 * Version 0.1.0-SNAPSHOT
 
+## TODO
+
+- use OAuth instead of basic auth
+- make description 'git commit msg' like
+- make README.md nicer with some markdowns
 
 
 ## Copyright and License

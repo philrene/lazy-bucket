@@ -7,7 +7,7 @@
 (def global-config "~/.lein/lazy-bucket.Cl")
 
 (defn  ^:higher-order ^:no-project-needed lazy-bucket
-  "Open a pull request for you:
+  "Open a pull request for you on bitbucket:
 
   Basic Usage:
     lein lazy-bucket :title \"title\" :description \"description\"\"
