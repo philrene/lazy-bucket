@@ -1,7 +1,20 @@
 # lazy-bucket
 
-TODO: Brief description
+Create a pull request for any project.
 
+It looks in the current project and open a pull request
+against integration for the current branch.
+
+The reviewers are specified either from :
+
+~/.lein/lazy-bucket.clj
+<project>/.lazy-bucket.clj
+or in command line with :excluded and :included
+
+please follow examples and templates at the root of the project
+
+You will need to setup at lest ~/.lein/lazy-bucket.clj from
+lazy-bucket_example.clj
 
 
 ## Releases and Dependency Information
