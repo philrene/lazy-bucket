@@ -4,9 +4,16 @@
   (:require [leiningen.core.main :as main]
             [lazy-bucket.core :refer :all]))
 
-(def global-config "~/.lein/lazy-bucket.clj")
+(def global-config "~/.lein/lazy-bucket.Cl")
 
 (defn  ^:higher-order ^:no-project-needed lazy-bucket
+  "Open a pull request for you:
+
+  Basic Usage:
+    lein lazy-bucket :title \"title\" :description \"description\"\"
+
+  Specifying excluded and included
+    lein lazy-bucket :title \"title\" :description \"description\"\" :included [\"username\"] :excluded [\"badperson\"] "
   [project & args]
   (let [args (apply hash-map args)
         options [(read-file global-config)
